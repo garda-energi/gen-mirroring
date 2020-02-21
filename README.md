@@ -35,8 +35,10 @@
 	- `sudo systemctl status gen.service`
 
 ## NB:
-- Crankshaft files: /opt/crankshaft/
-- Startup files: /boot/startup.sh or /boot/startup.py
+- MiniPC Hardware: https://www.waveshare.com/compute-module-3-plus-8gb.htm
+- CM3 Board: https://www.waveshare.com/wiki/Compute_Module_IO_Board_Plus
+- Crankshaft files: */opt/crankshaft/*
+- Startup files: */boot/startup.sh* or */boot/startup.py*
 - SocketCAN C language: http://skpang.co.uk/blog/archives/1199
 - Python-CAN example: http://github.com/skpang/PiCAN-Python-examples
   
