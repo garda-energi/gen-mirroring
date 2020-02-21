@@ -2,7 +2,7 @@
  * Device tree overlay for Focaltech 6236 touch-screen driver
  *
  * Compile:
- * sudo dtc -@ -I dts -O dtb -o /boot/overlays/ft6236.dtbo ft6236.dts
+ * sudo dtc -@ -I dts -O dtb -o ft6236-touch.dtbo ft6236-touch.dts
  */
 
 /dts-v1/;

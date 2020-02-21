@@ -116,7 +116,7 @@ gpio=0-27=a2
 dtoverlay=i2c0-bcm2708,sda0_pin=28,scl0_pin=29
 
 # Enable Touchscreen driver via I2C0 (DIY dto)
-dtoverlay=ft6236
+dtoverlay=ft6236-touch
 
 # Enable shutdown by GPIO state
 dtoverlay=gpio-shutdown,gpio_pin=34,active_low=1
