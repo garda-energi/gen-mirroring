@@ -190,4 +190,4 @@ if __name__ == '__main__':
         logging.info("Program is terminated.")
         # shutdown request
         if SHUTDOWN_REQUEST:
-            os.system("sudo shutdown now")
+            os.system("sudo shutdown -h now")
