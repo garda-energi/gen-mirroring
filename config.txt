@@ -1,0 +1,134 @@
+# For more options and information see
+# http://rpf.io/configtxt
+# Some settings may impact device functionality. See link above for details
+
+# uncomment if you get no picture on HDMI for a default "safe" mode
+#hdmi_safe=1
+
+# uncomment this if your display has a black border of unused pixels visible
+# and your display can output without overscan
+#disable_overscan=1
+
+# uncomment the following to adjust overscan. Use positive numbers if console
+# goes off screen, and negative if there is too much border
+#overscan_left=16
+#overscan_right=16
+#overscan_top=16
+#overscan_bottom=16
+
+# uncomment to force a console size. By default it will be display's size minus
+# overscan.
+#framebuffer_width=1280
+#framebuffer_height=720
+
+# uncomment if hdmi display is not detected and composite is being output
+#hdmi_force_hotplug=1
+
+# uncomment to force a specific HDMI mode (this will force VGA)
+#hdmi_group=1
+#hdmi_mode=1
+
+# uncomment to force a HDMI mode rather than DVI. This can make audio work in
+# DMT (computer monitor) modes
+#hdmi_drive=2
+
+# uncomment to increase signal to HDMI, if you have interference, blanking, or
+# no display
+#config_hdmi_boost=4
+
+# uncomment for composite PAL
+#sdtv_mode=2
+
+#uncomment to overclock the arm. 700 MHz is the default.
+#arm_freq=800
+
+# Uncomment some or all of these to enable the optional hardware interfaces
+#dtparam=i2c_arm=on
+#dtparam=i2s=on
+#dtparam=spi=on
+
+# Uncomment this to enable the lirc-rpi module
+#dtoverlay=lirc-rpi
+
+# Additional overlays and parameters are documented /boot/overlays/README
+
+# Enable audio (loads snd_bcm2835)
+#dtparam=audio=on
+
+# Custom power settings
+max_usb_current=1
+
+# Disable the PWR LED.
+dtparam=pwr_led_trigger=none
+dtparam=pwr_led_activelow=off
+
+# Disable Rainbow splash
+disable_splash=1
+
+# GPU Mem
+gpu_mem=256
+
+# Overscan fix
+overscan_scale=1
+
+# Bluetooth
+#dtoverlay=pi3-disable-bt
+
+#####################################################################
+# Disable i2c, we need these pins. 
+dtparam=i2c_arm=off                                                                                                                                                                              
+                                                                                                                                                                                                 
+# CAN-BUS (via SPI) Overlay
+# See: https://www.hackster.io/youness/how-to-connect-raspberry-pi-to-can-bus-b60235
+#dtparam=spi=on                                                                                                                                                                                  
+dtoverlay=spi-gpio35-39
+dtoverlay=mcp2515-can0,oscillator=8000000,interrupt=40,spimaxfrequency=1000000
+
+# Enable serial console (for debugging)
+dtparam=uart1=on
+enable_uart=1
+core_freq=250
+dtoverlay=uart1,txd1_pin=32,rxd1_pin=33
+
+# Set screen size and any overscan required
+overscan_left=0
+overscan_right=0
+overscan_top=0
+overscan_bottom=0
+framebuffer_width=800
+framebuffer_height=480
+
+# enable the DPI display
+enable_dpi_lcd=1
+display_default_lcd=1
+display_rotate=2
+
+# set up the size to 800x480
+dpi_group=2
+dpi_mode=87
+dpi_output_format=0x70017
+dpi_timings=800 0 40 48 40 480 0 13 3 29 0 0 0 60 0 32000000 6
+
+# Select Alt2 for GPIO pins 0 to 27 (for DPI24)
+gpio=0-27=a2
+
+# Enable I2C0 (for touch screen)
+dtoverlay=i2c0-bcm2708,sda0_pin=28,scl0_pin=29
+
+# Enable Touchscreen driver via I2C0 (DIY dto)
+dtoverlay=ft6236
+
+# Enable shutdown by GPIO state
+dtoverlay=gpio-shutdown,gpio_pin=34,active_low=1
+
+#Set GPIO state: https://www.raspberrypi.org/documentation/configuration/config-txt/gpio.md
+# SPI0 Interrupt
+gpio=40=ip,pu
+# SPI0 Reset
+#gpio=41=op,dl
+# LCD Power Control
+gpio=43=op,dl
+# LCD Brightness Control
+gpio=42=op,dl
+# Phone Connected Signal
+gpio=44=op,dl            

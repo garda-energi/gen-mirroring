@@ -1,0 +1,48 @@
+pi@CRANKSHAFT-NG:/boot$ systemctl list-units | grep Crankshaft
+  btautopair.service        loaded active running   Crankshaft Bluetooth Auto Pairing Service
+
+  btdevicedetect.service    loaded active exited    Crankshaft Bluetooth Device Detect Service
+
+  btrestore.service         loaded active exited    Crankshaft Bluetooth Pairing Restore Service
+
+  crankshaft.service        loaded active exited    Crankshaft Startup Service
+
+  csng-bluetooth.service    loaded active exited    Crankshaft Bluetooth Service
+
+  custombrightness.service  loaded active exited    Crankshaft Custom Brightness Exec Service
+
+  debugmode.service         loaded active exited    Crankshaft Debug Mode Service
+
+  devmode.service           loaded active exited    Crankshaft Dev Mode Service
+
+  display.service           loaded active exited    Crankshaft Display Service
+
+  gpio2kbd.service          loaded active running   Crankshaft GPIO to keyboard mapper
+
+  gpiotrigger.service       loaded active exited    Crankshaft GPIO Trigger Service
+
+  i2ccheck.service          loaded active exited    Crankshaft I2C Check Service
+
+  openauto.service          loaded active running   Crankshaft Android Auto Headunit
+
+  pulseaudio.service        loaded active running   Crankshaft PulseAudio system server
+
+  tap2wake.service          loaded active exited    Crankshaft Tap2Wake Service
+
+  timerstart.service        loaded active exited    Crankshaft Timers Startup Service
+
+  usbdetect.service         loaded active exited    Crankshaft USB Detect Service
+
+  user_startup.service      loaded active exited    Crankshaft User startup Service
+
+● wpa-monitor.service       loaded failed failed    Crankshaft Wifi Monitor Service
+
+  daymode.timer             loaded active waiting   Crankshaft Day Mode Timer
+
+  disconnect.timer          loaded active waiting   Crankshaft Disconnect Timer
+
+  nightmode.timer           loaded active waiting   Crankshaft Night Mode Timer
+
+  shutdown.timer            loaded active waiting   Crankshaft Shutdown Timer
+
+  update.timer              loaded active waiting   Crankshaft Update Check
