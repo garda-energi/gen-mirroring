@@ -1,6 +1,6 @@
 [Unit]
 Description=GEN CAN and GPIO handler
-Documentation=https://github.com/pudjamansyurin/
+Documentation=https://github.com/pudjamansyurin/gen-hmi-secondary
 ConditionPathExists=/home/pi/gen/gen.py
 After=multi-user.target
 
