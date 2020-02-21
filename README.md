@@ -1,4 +1,4 @@
-#SOP how to configure the Raspberry:
+# SOP how to configure the Raspberry:
 1. Download Crankshaft image, and burn to MiniPC using BalenaEtcher
 2. Copy these files to **/boot/** folder:
    - *cmdline.txt*
@@ -31,7 +31,7 @@
 	- `sudo systemctl start gen.service`
 	- `sudo systemctl status gen.service`
 
-##NB:
+## NB:
 - Crankshaft files: /opt/crankshaft/
 - Startup files: /boot/startup.sh or /boot/startup.py
 - SocketCAN C language: http://skpang.co.uk/blog/archives/1199
