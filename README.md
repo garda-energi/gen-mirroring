@@ -42,3 +42,41 @@
 - SocketCAN C language: http://skpang.co.uk/blog/archives/1199
 - Python-CAN example: http://github.com/skpang/PiCAN-Python-examples
   
+## Software Progress:
+- [ ] raspi-gpio: Missing DPI8 (GPIO12) and DPI9 (GPIO13) pin 
+- [x] Use dtoverlay=spi-gpio35-39
+- [x] Handle SPI-to-CAN module 
+- [x] Handle output GPIO of LCD Power, according to OS state, internal PCB 
+- [x] Handle output GPIO of LCD Backlight, according to RTC Time, internal PCB 
+- [x] Handle GPIO / CAN signal of Phone Connected status to VCU/HMI-1 
+- [x] Handle GPIO / CAN signal of RTC Daylight status from VCU 
+- [x] Hide booting process from main LCD 
+- [x] Pin that can be eliminated when CAN exist:  
+  - [GPIO34] SHUTDOWN  
+  - [RUN pin] RESET / WAKE 
+  - [GPIO44] PHONE_CONNECTED  
+  - [GPIO42] RTC_DAYLIGHT / BRIGHTNESS_CONTROL 
+
+## Hardware Progress:
+- [x] Add SMD Fuse 
+- [x] Add Charger IC for Phone 
+- [x] Add GPIO to control HMI brightness (parallel with EXTI Button) 
+- [x] Add GPIO to control HMI power 
+- [x] Add GPIO input for RPI power ON after HALT (held RUN pin to low) 
+- [x] Add Pull-Down Resistor in MOSFET brightness control 
+- [x] Increase the diameter of corner holes 
+- [x] Add GPIO input for RPI power OFF (held GPIO-34 to low) 
+- [x] Add GPIO output for HMI Indicator 
+- [x] Add SPI2CAN (use solder jumper for alternative) 
+- [x] Extend the connector for Serial to Solder 
+- [x] Change TOP and BOTTOM layer for GND only 
+- [x] Add logo, module name, module version 
+- [x] Check USB parallel solder jumper 
+- [x] Check IC Charger compatibility with the Software 
+- [x] Remove all values, only labels 
+- [x] Add raster to the empty space 
+- [x] Make LCD, Touch, Booster module control power be one 
+- [x] Handle new Mini-PC with the PCB 
+- [ ] Remove un-necessary GPIO pin (replaced by CAN) 
+- [ ] Change MOSFET (LCD Power & Backlight) Control to Transistor 
+- [ ] Fix USB IC Current Limiter problem 

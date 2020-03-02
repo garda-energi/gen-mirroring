@@ -6,9 +6,9 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStartPre=/usr/bin/gpio write 44 1
+ExecStartPre=/usr/bin/gpio write 43 1
 ExecStart=/usr/bin/python3 /home/pi/gen/gen.py
-ExecStop=/usr/bin/gpio write 44 0
+ExecStop=/usr/bin/gpio write 43 0
 Restart=on-failure
 RestartSec=5
 TimeoutSec=600
