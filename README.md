@@ -41,6 +41,13 @@
 - Startup files: */boot/startup.sh* or */boot/startup.py*
 - SocketCAN C language: http://skpang.co.uk/blog/archives/1199
 - Python-CAN example: http://github.com/skpang/PiCAN-Python-examples
+
+## Raspberry Credentials:
+1. Raspberry Zero W:
+   - pi:gen
+2. Raspberry Compute Module 3+:
+   - pi:gardagen
+   - root:garda
   
 ## Software Progress:
 - [ ] raspi-gpio: Missing DPI8 (GPIO12) and DPI9 (GPIO13) pin 
