@@ -132,3 +132,5 @@ gpio=43=op,dl
 gpio=42=op,dl
 # Phone Connected Signal
 gpio=44=op,dl            
+# Enable MT3608
+gpio=45=op,dl
