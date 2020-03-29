@@ -59,7 +59,8 @@
 
 1. Follow this instructions to install PCAN driver:
    - <https://github.com/SICKAG/sick_line_guidance/blob/master/doc/pcan-linux-installation.md>
-2. Use this tools for send/receve CAN data:
+2. Use this tools to send/receive CAN data:
+   - `sudo apt-get install can-utils`
    - <https://github.com/linux-can/can-utils>
   
 ## Software Progress
