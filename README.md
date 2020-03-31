@@ -66,6 +66,8 @@
    - CAN Sniffer in Binary: `cansniffer can0 -cB`
    - CAN Sniffer in Hex: `cansniffer can0 -c`
    - CAN Bus Load: `canbusload can0@500000 -r -t -b -c`
+   - CAN Dump (scrolling): `candump can0 -c`
+   - CAN Send data: `cansend can0 123#ABCDEF`
   
 ## Software Progress
 
