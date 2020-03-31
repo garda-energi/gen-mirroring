@@ -62,6 +62,10 @@
 2. Use this tools to send/receive CAN data:
    - `sudo apt-get install can-utils`
    - <https://github.com/linux-can/can-utils>
+3. How to use that tools:
+   - CAN Sniffer in Binary: `cansniffer can0 -cB`
+   - CAN Sniffer in Hex: `cansniffer can0 -c`
+   - CAN Bus Load: `canbusload can0@500000 -r -t -b -c`
   
 ## Software Progress
 
