@@ -18,12 +18,15 @@ from datetime import datetime
 # global variables
 DEBUG = not False
 SECONDS_DILATION_MAX = 60
-GPIO_LCD_POWER = 44
+GPIO_LED = 44
 GPIO_LCD_BACKLIGHT = 42
+
 CAN_ID_SUBMODULE = 0x000
 CAN_ID_RTC = 0x001 
+CAN_ADDRESS = 0x7D0
 CHANNEL = "can0"
 BITRATE = 500000
+
 RUN_THREADS = True
 SHUTDOWN_REQUEST = False
 
@@ -50,7 +53,7 @@ def threadRxCan():
                 canRxRTC(frame.data)
 
 def threadUsbMonitor():
-    msg = can.Message(arbitration_id=0x7D0, data=[0])
+    msg = can.Message(arbitration_id=CAN_ADDRESS, is_extended_id=False, data=[0])
     toggle_indicator = False
 
     # check & send usb-plugged status
@@ -67,10 +70,10 @@ def threadUsbMonitor():
             if device_count > 1:
                 msg.data[0] = int(device_count > 1)
                 # indicator
-                GPIO.output(GPIO_LCD_POWER, (GPIO.HIGH, GPIO.LOW)[toggle_indicator])
+                GPIO.output(GPIO_LED, (GPIO.HIGH, GPIO.LOW)[toggle_indicator])
                 toggle_indicator = not toggle_indicator
             else:
-                GPIO.output(GPIO_LCD_POWER, GPIO.HIGH)
+                GPIO.output(GPIO_LED, GPIO.HIGH)
 
         # send usb-plugged status to can
         try:
@@ -143,7 +146,7 @@ if __name__ == '__main__':
     # GPIO initialization
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
-    GPIO.setup(GPIO_LCD_POWER, GPIO.OUT) 
+    GPIO.setup(GPIO_LED, GPIO.OUT) 
     GPIO.setup(GPIO_LCD_BACKLIGHT, GPIO.OUT) 
 
     # activate the CAN driver
