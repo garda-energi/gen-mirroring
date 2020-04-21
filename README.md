@@ -68,6 +68,7 @@
    - CAN Bus Load: `canbusload can0@500000 -r -t -b -c`
    - CAN Dump (scrolling): `candump can0 -c`
    - CAN Send data: `cansend can0 123#ABCDEF`
+   - CAN Generate : `cangen can0 -g 500 -I 42A -L 1 -D i -v -v`
   
 ## Software Progress
 
