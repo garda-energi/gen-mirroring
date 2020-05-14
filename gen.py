@@ -46,11 +46,11 @@ def threadRxCan():
 
             # set Backlight Control from Submodule.Daylight frame
             if(frame.arbitration_id == CAN_ID_SUBMODULE):
-                SHUTDOWN_REQUEST = canRxSubModule(frame.data)
+                canRxSubModule(frame.data)
 
             # set Datetime from RTC frame
             elif(frame.arbitration_id == CAN_ID_RTC):
-                canRxRTC(frame.data)
+                SHUTDOWN_REQUEST = canRxRTC(frame.data)
 
 def threadUsbMonitor():
     msg = can.Message(arbitration_id=CAN_ADDRESS, is_extended_id=False, data=[0])
@@ -102,17 +102,15 @@ def canFormatFrame(frame, conversion = "hex"):
 def canRxSubModule(data):
     try:
         backlight_state = (data[0] >> 7) & 1
-        shutdown_state = (data[1] >> 2) & 1
     except: 
         logging.warning("SubModule Frame is corrupted, parsing failed.")
     else:
         GPIO.output(GPIO_LCD_BACKLIGHT, backlight_state)
 
-    return shutdown_state
-
 def canRxRTC(data):
     try:
         rtc = datetime(data[5], data[4], data[3], data[2], data[1], data[0], 0)
+        shutdown_state = (data[7] >> 0) & 1
     except:
         logging.warning("RTC Frame is corrupted, parsing failed.")
     else:
@@ -126,6 +124,8 @@ def canRxRTC(data):
                 rtc.year, rtc.month, rtc.day, rtc.hour, rtc.minute, rtc.second
             ))       
             time.sleep(0.1)
+            
+    return shutdown_state
 
 def shell(command):
     output = subprocess.check_output(
